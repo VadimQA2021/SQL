@@ -1,0 +1,13 @@
+Задание: 23 (Serge I: 2003-02-14)
+Найдите производителей, которые производили бы как ПК
+со скоростью не менее 750 МГц, так и ПК-блокноты со скоростью не менее 750 МГц.
+Вывести: Maker
+Select maker 
+from pc inner join product
+on pc.model = product.model
+where speed >= 750
+intersect
+select maker 
+from laptop inner join product
+on laptop.model = product.model
+where speed >= 750

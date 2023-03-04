@@ -1,0 +1,11 @@
+Задание: 25 (Serge I: 2003-02-14)
+Найдите производителей принтеров, которые производят ПК с наименьшим объемом RAM и с самым быстрым процессором среди всех ПК, имеющих наименьший объем RAM. Вывести: Maker
+with var1 as (select max(speed) as max_speed from pc where ram = (select min(ram) from pc))
+select maker
+from product
+where type = 'printer'
+intersect
+select maker
+from product inner join pc
+on product.model = pc.model
+where type in ('pc') and speed = (select max_speed from var1) and ram = (select min(ram) from pc)
