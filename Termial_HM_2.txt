@@ -1,0 +1,236 @@
+Termial. HW_2
+1. Сделать папку dir_1
+Vadim@MacBook-Pro-newowner ~/t/Termial_HM_2> mkdir dir_1
+ 
+2. Зайти в папку dir_1
+Vadim@MacBook-Pro-newowner ~/t/Termial_HM_2> cd dir_1/
+ 3. Создать папку inner_dir_1
+Vadim@MacBook-Pro-newowner ~/t/T/dir_1> mkdir inner_dir_1
+
+ 4. Посмотреть где ты находишься
+Vadim@MacBook-Pro-newowner ~/t/T/dir_1> pwd
+
+ 5. Находясь в папке dir_1 создать пустой текстовый файл tf_1.txt
+Vadim@MacBook-Pro-newowner ~/t/T/dir_1 [1]> touch tf_1.txt
+
+ 6. Находясь в папке dir_1 через команду cat создать текстовый файл tf_2.txt со следующими строками:
+- the first 1
+- the second 2
+- the third 3
+
+Vadim@MacBook-Pro-newowner ~/t/T/dir_1> cat >> tf_2.txt
+the first 1
+the second 2
+the third 3
+^C⏎
+
+ 7. Зайти в папку inner_dir_1
+Vadim@MacBook-Pro-newowner ~/t/T/dir_1> cd inner_dir_1/
+
+ 8. Через cat сделать текстовый файл tf_3.txt  c любыми строками
+Vadim@MacBook-Pro-newowner ~/t/T/d/inner_dir_1> cat >> tf_3.txt
+one
+two
+three
+four
+five
+six
+seven
+eight
+nine
+ten
+first
+second
+third
+fourth
+fifth
+sixth
+seventh
+eighth
+ninth
+tenth
+^C⏎
+
+ 9. Через cat добавить в текстовый файл tf_3.txt строку “the second 2”
+Vadim@MacBook-Pro-newowner ~/t/T/d/inner_dir_1 [SIGINT]> cat >> tf_3.txt
+the second 2
+^C⏎
+
+ 10. Через cat добавить в текстовый файл tf_3.txt строку “the sec 2”
+Vadim@MacBook-Pro-newowner ~/t/T/d/inner_dir_1 [SIGINT]> cat >> tf_3.txt
+the sec 2
+^C⏎
+
+ 11. Через cat добавить в текстовый файл tf_2.txt строку “the sec 3”
+Vadim@MacBook-Pro-newowner ~/t/T/dir_1> cat >> tf_2.txt
+the sec 3
+^C⏎
+
+ 12. Через cat добавить в текстовый файл tf_3.txt строку “the SeCoNd 2”
+Vadim@MacBook-Pro-newowner ~/t/T/d/inner_dir_1> cat >> tf_3.txt
+the SeCoNd 2
+^C⏎
+
+ 13. Через cat добавить в текстовый файл tf_2.txt строку “the seConD 2”
+Vadim@MacBook-Pro-newowner ~/t/T/dir_1> cat >> tf_2.txt
+the seConD 2
+^C⏎
+
+ 14. Сделать текстовый файл tf_4.txt в котором будет 15 строк.
+Vadim@MacBook-Pro-newowner ~/t/T/dir_1 [SIGINT]> cat >> tf_4.txt
+1 первый
+2 второй
+3 третий
+4 четвертый
+5 пятый
+6 шестой
+7 седьмой
+8 восьмой
+9 девятый
+10 десятый
+11 одиннадцать
+12 двенадцать
+13 тринадцать
+14 четырнадцать
+15 пятнадцать
+^C⏎
+
+ 15. Сделать текстовый файл tF_5.txt в котором будет 13 строк.
+Vadim@MacBook-Pro-newowner ~/t/T/dir_1 [SIGINT]> cat >> tF_5.txt
+1 pod
+2 papear
+3
+4stop
+5 auto
+6 boys
+7 girls
+8 mountains
+9 crocodiles
+10 children
+11 woman
+12 men
+13 female
+^C⏎
+
+ 16. Вывести список всех файлов в папке.
+Vadim@MacBook-Pro-newowner ~/t/T/dir_1 [SIGINT]> ls -la
+
+ 17. Выйти из папки inner_dir_1
+Vadim@MacBook-Pro-newowner ~/t/T/d/inner_dir_1> cd ../
+
+ 18. Вывести содержимое файла tf_3.txt в терминал.
+Vadim@MacBook-Pro-newowner ~/t/T/dir_1> cat ./inner_dir_1/tf_3.txt
+one
+two
+three
+four
+five
+six
+seven
+eight
+nine
+ten
+first
+second
+third
+fourth
+fifth
+sixth
+seventh
+eighth
+ninth
+tenth
+the second 2
+the sec 2
+the SeCoNd 2
+
+ 19. Найти путь к файлу tf_4.txt
+Vadim@MacBook-Pro-newowner ~/t/T/dir_1> find . -name tf_4.txt
+./tf_4.txt
+
+ 20. Очистить файл tf_4.txt от содержимого без удаления самого файла.
+Vadim@MacBook-Pro-newowner ~/t/T/dir_1 [1]> :> tf_4.txt
+или
+Vadim@MacBook-Pro-newowner ~/t/T/dir_1 [SIGINT]> .> tf_4.txt
+или
+Vadim@MacBook-Pro-newowner ~/t/T/dir_1 [SIGINT]> cat /dev/null > tf_4.txt
+или
+Vadim@MacBook-Pro-newowner ~/t/T/dir_1 [64]> echo -n > tf_4.txt
+
+ 21. Найти путь к файлам у которых есть  “tf” в названии.
+Vadim@MacBook-Pro-newowner ~/t/T/dir_1> find . -name "*tf*"
+* указывает на то, что поиск будет осуществляться включительно с символами перед tf и после него
+ 22. Найти путь к файлам у которых есть  “tf” в названии и буквы в любом регистре.
+Vadim@MacBook-Pro-newowner ~/t/T/dir_1> find . -iname "*tf*"
+-i указывает на поиск без регистрозависимости 
+
+ 23. Найти строки в файлах где есть комбинация букв “sec” в текущей папке
+Vadim@MacBook-Pro-newowner ~/t/T/dir_1> grep sec *
+* указывает на поиск в текущей папке
+
+ 24. Найти строки в файлах где есть комбинация букв “sec” в любом регистре в текущей папке
+Vadim@MacBook-Pro-newowner ~/t/T/dir_1 [2]> grep -i  sec *
+-i указывает на поиск без регистрозависимости 
+
+ 25. Найти строки в файлах где есть только комбинация букв “sec” в текущей папке
+Vadim@MacBook-Pro-newowner ~/t/T/dir_1 [2]> grep -x sec *
+-x опция указывает искать шаблон как целую строку
+
+ 26. Найти строки в файлах где есть только комбинация букв “sec” в любом регистре в текущей папке
+Vadim@MacBook-Pro-newowner ~/t/T/dir_1 [2]> grep -xi sec *
+-x опция указывает искать шаблон как целую строку
+-i указывает на поиск без регистрозависимости 
+
+ 27. Найти строки в файлах где есть комбинация букв “second” в текущей папке
+Vadim@MacBook-Pro-newowner ~/t/T/dir_1 [2]> grep second *
+* указывает на поиск в текущей папке
+
+ 28. Найти строки в файлах где есть комбинация букв “second” в любом регистре в текущей папке
+Vadim@MacBook-Pro-newowner ~/t/T/dir_1 [2]> grep -i second *
+-i указывает на поиск без регистрозависимости
+
+ 29. Найти строки в файлах где есть комбинация букв “second” во всех папках ниже уровнем
+Vadim@MacBook-Pro-newowner ~/t/T/dir_1 [124]> grep -r second *
+-r - рекурсивный поиск по всем подпапкам
+
+ 30. Найти только путь и название файла в строках которых есть комбинация букв “second” в текущей папке
+Vadim@MacBook-Pro-newowner ~/t/T/dir_1 [2]> grep -L second *
+-l, --files-without-match - выводить только имена файлов, будут выведены все файлы в которых выполняется поиск;
+
+ 31. Найти все строки во всех файлах, где нет комбинации “second”
+Vadim@MacBook-Pro-newowner ~/t/T/dir_1> grep -vr second *
+-r - рекурсивный поиск по всем подпапкам
+-v, --invert-match - вывести только те строки, в которых шаблон поиска не найден
+
+ 32. Найти только название и путь к файлам где нет комбинации “second”
+Vadim@MacBook-Pro-newowner ~/t/T/dir_1 [1]> grep -lrv second *
+-l, --files-without-match - выводить только имена файлов, будут выведены все файлы в которых выполняется поиск;
+-r - рекурсивный поиск по всем подпапкам
+-v, --invert-match - вывести только те строки, в которых шаблон поиска не найден
+
+ 33. Вывести в терминал 4 последних строк любого текстового файла
+Vadim@MacBook-Pro-newowner ~/t/T/d/inner_dir_1> tail -3 tf_3.txt
+-3 указывает на то, сколько строк с конца файла должно быть выведено
+
+ 34. Вывести в терминал 4 первые строки любого текстового файла.
+Vadim@MacBook-Pro-newowner ~/t/T/d/inner_dir_1> head -4 tf_3.txt
+
+-4 указывает на то, сколько строк с начала файла должно быть выведено
+ 35. Команда в одну строку. Создать папку и создать текстовый файл с содержимым.
+Vadim@MacBook-Pro-newowner ~/t/T/d/inner_dir_1> mkdir folder0 && cd folder0 && echo 12345 > file0.txt
+&& логическое И
+
+ 36. Команда в одну строку. Переместить в любую одну папку текстовые файлы у которых в содержимом есть слово “sec”
+Vadim@MacBook-Pro-newowner ~/t/T/dir_1 [0|1]> grep -lr sec . | xargs -I % mv % ./dir_2
+
+ 37. Команда в одну строку. Скопировать в любую одну папку текстовые файлы у которых в содержимом есть слово “sec”
+Vadim@MacBook-Pro-newowner ~/t/T/d/dir_2> grep -lr sec . | xargs -I % cp % ./dir_2
+
+ 38. Команда в одну строку. Найти все строки c “sec” во всех текстовых файлах, скопировать и вставить эти строки в один новый созданный текстовый файл.
+grep -ir --line-buffered sec >> tf_7.txt 
+
+ 39. Команда в одну строку. Удалить текстовые файлы у которых в содержимом есть слово “sec”
+grep -lr -h sec | xargs rm -r
+
+ 40. Просто вывести в терминал строку “Good job!!”
+echo "Good job"
